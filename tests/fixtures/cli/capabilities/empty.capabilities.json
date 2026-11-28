@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "generatedFrom": {
+    "commit": "1111111111111111111111111111111111111111",
+    "gateRecords": 0
+  },
+  "states": [
+    "planned",
+    "parsed",
+    "lifted",
+    "recognized",
+    "proved",
+    "legalized",
+    "emitted",
+    "compiled",
+    "executed",
+    "verified",
+    "performance-validated"
+  ],
+  "pairs": [
+    {
+      "from": "csharp",
+      "sourceProfile": "net10",
+      "to": "csharp",
+      "targetProfile": "net10",
+      "state": "planned",
+      "fixtures": 0,
+      "evidence": null,
+      "limitations": []
+    },
+    {
+      "from": "csharp",
+      "sourceProfile": "net10",
+      "to": "javascript",
+      "targetProfile": "es2022",
+      "state": "planned",
+      "fixtures": 0,
+      "evidence": null,
+      "limitations": []
+    },
+    {
+      "from": "csharp",
+      "sourceProfile": "net10",
+      "to": "kotlin",
+      "targetProfile": "jvm",
+      "state": "planned",
+      "fixtures": 0,
+      "evidence": null,
+      "limitations": []
+    },
+    {
+      "from": "csharp",
+      "sourceProfile": "net10",
+      "to": "perl",
+      "targetProfile": "perl5",
+      "state": "planned",
+      "fixtures": 0,
+      "evidence": null,
+      "limitations": []
+    },
+    {
+      "from": "javascript",
+      "sourceProfile": "es2022",
+      "to": "csharp",
+      "targetProfile": "net10",
+      "state": "planned",
+      "fixtures": 0,
+      "evidence": null,
+      "limitations": []
+    },
+    {
+      "from": "javascript",
+      "sourceProfile": "es2022",
+      "to": "javascript",
+      "targetProfile": "es2022",
+      "state": "planned",
+      "fixtures": 0,
+      "evidence": null,
+      "limitations": []
+    },
+    {
+      "from": "javascript",
+      "sourceProfile": "es2022",
+      "to": "kotlin",
+      "targetProfile": "jvm",
+      "state": "planned",
+      "fixtures": 0,
+      "evidence": null,
+      "limitations": []
+    },
+    {
+      "from": "javascript",
+      "sourceProfile": "es2022",
+      "to": "perl",
+      "targetProfile": "perl5",
+      "state": "planned",
+      "fixtures": 0,
+      "evidence": null,
+      "limitations": []
+    },
+    {
+      "from": "kotlin",
+      "sourceProfile": "jvm",
+      "to": "csharp",
+      "targetProfile": "net10",
+      "state": "planned",
+      "fixtures": 0,
+      "evidence": null,
+      "limitations": []
+    },
+    {
+      "from": "kotlin",
+      "sourceProfile": "jvm",
+      "to": "javascript",
+      "targetProfile": "es2022",
+      "state": "planned",
+      "fixtures": 0,
+      "evidence": null,
+      "limitations": []
+    },
+    {
+      "from": "kotlin",
+      "sourceProfile": "jvm",
+      "to": "kotlin",
+      "targetProfile": "jvm",
+      "state": "planned",
+      "fixtures": 0,
+      "evidence": null,
+      "limitations": []
+    },
+    {
+      "from": "kotlin",
+      "sourceProfile": "jvm",
+      "to": "perl",
+      "targetProfile": "perl5",
+      "state": "planned",
+      "fixtures": 0,
+      "evidence": null,
+      "limitations": []
+    },
+    {
+      "from": "perl",
+      "sourceProfile": "perl5",
+      "to": "csharp",
+      "targetProfile": "net10",
+      "state": "planned",
+      "fixtures": 0,
+      "evidence": null,
+      "limitations": []
+    },
+    {
+      "from": "perl",
+      "sourceProfile": "perl5",
+      "to": "javascript",
+      "targetProfile": "es2022",
+      "state": "planned",
+      "fixtures": 0,
+      "evidence": null,
+      "limitations": []
+    },
+    {
+      "from": "perl",
+      "sourceProfile": "perl5",
+      "to": "kotlin",
+      "targetProfile": "jvm",
+      "state": "planned",
+      "fixtures": 0,
+      "evidence": null,
+      "limitations": []
+    },
+    {
+      "from": "perl",
+      "sourceProfile": "perl5",
+      "to": "perl",
+      "targetProfile": "perl5",
+      "state": "planned",
+      "fixtures": 0,
+      "evidence": null,
+      "limitations": []
+    }
+  ]
+}

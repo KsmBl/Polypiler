@@ -165,7 +165,7 @@ public sealed class JavaScriptTranslateCommandTests {
     Assert.That(help, Does.Contain("usage: polypiler translate <file> [options]").And.Contain("small subsets of its languages"));
     Assert.That(help, Does.Contain("  --from <csharp|javascript|python|rust|perl|batch|msil|jvm|cpp|vbscript|visualbasic|go|kotlin> ").And.Contain("  --to <javascript|csharp|python|rust|perl|batch|msil|jvm|cpp|vbscript|visualbasic|go|kotlin> ").And.Contain("  --output <directory> ")
       .And.Contain("  --export <name>[,<name>...] ").And.Contain("  --disable-opt <O####>[,<O####>...] ").And.Contain("  --explain-types "));
-    Assert.That(Invoke("--help").Output, Does.Contain("  translate  translate a source file").And.Contain("small subsets of its languages"));
+    Assert.That(Invoke("--help").Output, Does.Contain("  translate     translate a source file").And.Contain("small subsets of its languages"));
   }
 
 }

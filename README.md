@@ -263,6 +263,16 @@ dotnet run --project Polypiler.Cli -c Release -- verify tests/fixtures/cli/verif
 
 `verify` re-establishes from a directory and its `polypiler.manifest.json` alone whether the output still builds, runs and matches independent vectors ([docs/cli/verify.md](docs/cli/verify.md)): it recomputes the hash of every listed output (an edited file is `PLY0054` and nothing runs), reads a vector file of the oracle framework (`--against`, or the one the manifest recorded), checks every JavaScript source with `node --check`, calls the function the vector file exports once per vector in the sandbox and compares the outputs under the file's exactness policy. Each vector is a `pass` or `FAIL expected <e> actual <a>` line. The manifest's build, execution and verification are then rewritten to what this run found — a `verified` manifest that now fails goes back to `executed` — unless `--no-update` is given; `--evidence <directory>` writes an evidence bundle. `PLY0016` for a directory without a manifest, `PLY0017` for a vector file that is not one, `PLY0063` when no independent oracle is left. Only JavaScript output is run so far.
 
+### See what is supported
+
+```bash
+# Works today: the pairs the embedded capability report states with evidence, and a planned row for a pair
+# without any; --all lists every pair, --format json the same as JSON
+dotnet run --project Polypiler.Cli -c Release -- capabilities --from csharp --to javascript
+```
+
+`capabilities` reads the capability report the executable embeds (`docs/capabilities.json`), or `--report <file>`, and prints the state of each source and target pair with its evidence ([docs/cli/capabilities.md](docs/cli/capabilities.md)); it never computes or upgrades a state. A report that claims a state without evidence is `PLY0061` and prints nothing.
+
 ### Translate an existing algorithm
 
 ```bash
