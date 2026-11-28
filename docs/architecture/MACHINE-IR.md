@@ -155,6 +155,26 @@ range and identify embedded data. Undefined dynamic symbols with supported GOT r
 produce import slots. Thread-local sections keep their stored layout and do not occupy the ordinary
 process address map. Unsupported relocation records remain in the image with `PLY4063`.
 
+`CbmBasicPrgLoader` (`Polypiler.Core.BinaryFormats.CbmBasic`,
+[#1005](https://github.com/Hawkynt/Polypiler/issues/1005)) splits a Commodore BASIC PRG into its lines
+(`spec/binary/c64-basic-v2/format.yaml`).
+- **Layout.** A load address, then lines of link, line number, tokens and a terminating `00`, then the
+  end marker `00 00`. The bytes after the end marker are kept as the trailer, with their address.
+- **Dialect.** It comes from the load address (`CbmBasicDialects`: `$0801` is `c64-basic-v2`), or the
+  caller passes it.
+- **Links.** The walk follows the terminators, as the machine's relink does, so a stale link is the
+  warning `PLY3902`.
+- **Warnings.** A line number that is not above its predecessor, or is above 63999, is the warning
+  `PLY3904`.
+- **Errors.** A file shorter than four bytes is `PLY3900`. A load address of no known dialect is
+  `PLY3901`. An unterminated line is `PLY3903`. A file that ends where a link or line number is
+  expected is `PLY3905`.
+- **Diagnostic positions.** Diagnostics carry the byte offset plus one as their column.
+- **Contract.** Content bytes are returned untouched, and nothing is repaired.
+- **Checks.** `petcat` of the `vice` toolchain lists the same line numbers in the same order for the
+  fixtures of `tests/fixtures/retro/cbmbasic/load`. The fuzz target `cbmbasic-load` checks that any
+  input gives a program or a diagnostic.
+
 ## Ports
 
 `Polypiler.Core.MachineSemantics.Ports` declares, once for every CPU: `IMachineCodeSource`,

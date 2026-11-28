@@ -376,6 +376,12 @@ Every diagnostic Polypiler reports carries a code, `PLY` and four digits, that m
 
 | Code | Severity | Exit code | Message | Owner |
 | --- | --- | --- | --- | --- |
+| [PLY3900](PLY3900.md) | error | 4 (InvalidSource) | `'<file>' is too short to be a Commodore BASIC program (<n> byte(s))` | #1005 |
+| [PLY3901](PLY3901.md) | error | 4 (InvalidSource) | `load address $<address> is not the BASIC start of a known dialect; pass a dialect explicitly` | #1005 |
+| [PLY3902](PLY3902.md) | warning | — | `line <n>: stored link $<link> differs from the next line's address $<address>` | #1005 |
+| [PLY3903](PLY3903.md) | error | 4 (InvalidSource) | `line <n> at offset <offset> is not terminated` | #1005 |
+| [PLY3904](PLY3904.md) | warning | — | `line number <n> follows <previous> \| line number <n> exceeds 63999` | #1005 |
+| [PLY3905](PLY3905.md) | error | 4 (InvalidSource) | `program ends at offset <offset> without an end marker` | #1005 |
 | [PLY3935](PLY3935.md) | error | 7 (OracleFailure) | `VICE run of '<program>' failed: <cause>` | FMT-CBMBASIC-ORACLE |
 | [PLY3936](PLY3936.md) | error | 7 (OracleFailure) | `petcat <operation> failed for dialect '<dialect>': <cause>` | FMT-CBMBASIC-ORACLE |
 | [PLY3960](PLY3960.md) | error | 7 (OracleFailure) | `PC-BASIC <operation> failed: <cause>` | FMT-GWBASIC-ORACLE |

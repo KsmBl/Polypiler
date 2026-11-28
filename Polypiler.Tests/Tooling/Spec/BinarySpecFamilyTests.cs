@@ -77,7 +77,7 @@ public sealed class BinarySpecFamilyTests {
   [Test]
   public void RepositorySpecTree_HasNoBinaryErrors() {
     var validation = new SpecValidator(SpecFamilies.All).Run(SpecTree.Load(Path.Combine(_root, "spec"), _root), "binary");
-    Assert.That((validation.Documents, validation.Diagnostics.Count), Is.EqualTo((2, 0)));
+    Assert.That((validation.Documents, validation.Diagnostics.Count), Is.EqualTo((3, 0)));
   }
 
   [TestCase(Instructions)]

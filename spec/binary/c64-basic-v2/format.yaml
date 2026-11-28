@@ -1,0 +1,18 @@
+id: BINARY.c64-basic-v2.format
+title: Commodore 64 BASIC V2 program file (PRG)
+version: 1
+status: draft
+owner: Hawkynt
+issue: FMT-CBMBASIC
+tests: []
+introducedIn: P3
+compatibility: none
+reviewedRevision: 0
+normative: ""
+spec:
+  kind: format
+  fields:
+    - {name: loadAddress, offset: 0, size: 2, byteOrder: little, meaning: "address the program loads to; $0801 is the C64's BASIC start, the dialect c64-basic-v2"}
+    - {name: link, offset: 2, size: 2, byteOrder: little, meaning: "per line: address of the next line; 00 00 is the end marker, after which the trailer follows"}
+    - {name: lineNumber, offset: 4, size: 2, byteOrder: little, meaning: "per line: the line number, ascending, at most 63999 as typed"}
+    - {name: content, offset: 6, size: 1, byteOrder: little, meaning: "per line: tokenized bytes, none of them 00, then a terminating 00; the next line follows the terminator"}

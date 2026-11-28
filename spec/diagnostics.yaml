@@ -2602,6 +2602,58 @@ codes:
     area: jvm
     owner: "#831"
     surfaces: standard error of polypiler translate --to jvm; stops emission
+  - code: PLY3900
+    severity: error
+    exit: InvalidSource
+    title: Commodore BASIC file too short
+    message: "'<file>' is too short to be a Commodore BASIC program (<n> byte(s))"
+    rule: tokenized-basic.load.short
+    area: tokenized-basic
+    owner: "#1005"
+    surfaces: CbmBasicPrgLoader.Load for a file of fewer than 4 bytes
+  - code: PLY3901
+    severity: error
+    exit: InvalidSource
+    title: load address of no known dialect
+    message: "load address $<address> is not the BASIC start of a known dialect; pass a dialect explicitly"
+    rule: tokenized-basic.load.address
+    area: tokenized-basic
+    owner: "#1005"
+    surfaces: CbmBasicPrgLoader.Load without a dialect for a load address CbmBasicDialects does not know, such as machine code with a PRG header
+  - code: PLY3902
+    severity: warning
+    title: stale BASIC line link
+    message: "line <n>: stored link $<link> differs from the next line's address $<address>"
+    rule: tokenized-basic.load.link
+    area: tokenized-basic
+    owner: "#1005"
+    surfaces: CbmBasicPrgLoader.Load; the walk follows the terminators, as the relink does
+  - code: PLY3903
+    severity: error
+    exit: InvalidSource
+    title: unterminated BASIC line
+    message: "line <n> at offset <offset> is not terminated"
+    rule: tokenized-basic.load.unterminated
+    area: tokenized-basic
+    owner: "#1005"
+    surfaces: CbmBasicPrgLoader.Load for line content that runs to the end of the file
+  - code: PLY3904
+    severity: warning
+    title: BASIC line number out of order or range
+    message: "line number <n> follows <previous> | line number <n> exceeds 63999"
+    rule: tokenized-basic.load.number
+    area: tokenized-basic
+    owner: "#1005"
+    surfaces: CbmBasicPrgLoader.Load for a line number not above its predecessor or above 63999
+  - code: PLY3905
+    severity: error
+    exit: InvalidSource
+    title: BASIC program without end marker
+    message: "program ends at offset <offset> without an end marker"
+    rule: tokenized-basic.load.end
+    area: tokenized-basic
+    owner: "#1005"
+    surfaces: CbmBasicPrgLoader.Load when the file ends where a link or a line number is expected
   - code: PLY3935
     severity: error
     exit: OracleFailure
